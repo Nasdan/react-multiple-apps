@@ -6,8 +6,14 @@ import { App } from './app';
 const Test = () => (
   <div>
     <h1>Test component</h1>
-    <Link to="app-a">Page A</Link>
-    <Link to="app-b">Page B</Link>
+    <div style={{ display: 'flex', flexDirection: 'column' }}>
+      <Link style={{ padding: '1rem' }} to="app-a">
+        Page A
+      </Link>
+      <Link style={{ padding: '1rem' }} to="app-b">
+        Page B
+      </Link>
+    </div>
   </div>
 );
 

@@ -19,14 +19,20 @@ render(AppRouter, 'root');
 render(ModuleA, 'app-a');
 render(ModuleB, 'app-b');
 
-// if (module.hot) {
-//   module.hot.accept('../app-a/src/appRouter', () => {
-//     render(AppARouter, 'app-a');
-//   });
-// }
+if (module.hot) {
+  module.hot.accept('./appRouter', () => {
+    render(AppRouter, 'root');
+  });
+}
 
-// if (module.hot) {
-//   module.hot.accept('../app-b/src/appRouter', () => {
-//     render(AppBRouter, 'app-b');
-//   });
-// }
+if (module.hot) {
+  module.hot.accept('app-a', () => {
+    render(ModuleA, 'app-a');
+  });
+}
+
+if (module.hot) {
+  module.hot.accept('app-b', () => {
+    render(ModuleB, 'app-b');
+  });
+}
