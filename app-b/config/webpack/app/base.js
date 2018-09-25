@@ -8,22 +8,18 @@ const helpers = require('../../helpers');
 module.exports = merge(common, {
   context: helpers.resolveFromRootPath('src'),
   entry: {
-    app: [
-      './index.tsx',
-    ],
+    app: ['./index.tsx'],
     vendor: [
       'babel-polyfill',
+      'history',
       'react',
       'react-dom',
       'react-hot-loader',
       'react-router-dom',
-      'history',
       'whatwg-fetch',
     ],
-    appStyles: [
-    ],
-    vendorStyles: [
-    ],
+    appStyles: [],
+    vendorStyles: [],
   },
 
   module: {
@@ -70,7 +66,7 @@ module.exports = merge(common, {
 
   plugins: [
     new webpack.optimize.CommonsChunkPlugin({
-      names: ['vendor', 'manifest']
+      names: ['vendor', 'manifest'],
     }),
     new HtmlWebpackPlugin({
       filename: 'index.html',
@@ -81,7 +77,7 @@ module.exports = merge(common, {
     }),
     new webpack.DefinePlugin({
       'process.env': {
-        'NODE_ENV': JSON.stringify(process.env.NODE_ENV),
+        NODE_ENV: JSON.stringify(process.env.NODE_ENV),
       },
     }),
   ],
