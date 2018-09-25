@@ -3,6 +3,7 @@ import { ConnectedRouter } from 'connected-react-router';
 import { Provider } from 'react-redux';
 import { Routes } from './routes';
 import { store } from './store';
+import { actions } from './external';
 
 interface Props {
   history;
@@ -15,3 +16,5 @@ export const ModuleA: React.StatelessComponent<Props> = props => (
     </ConnectedRouter>
   </Provider>
 );
+
+export { store, actions };

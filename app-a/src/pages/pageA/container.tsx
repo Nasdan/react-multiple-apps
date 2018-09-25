@@ -5,6 +5,7 @@ import { State } from '../../rootReducer';
 
 const mapStateToProps = (state: State) => ({
   title: state.pageA.title,
+  subTitle: state.external.subTitle,
 });
 
 const mapDispatchProps = dispatch => ({
