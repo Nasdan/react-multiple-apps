@@ -1,6 +1,17 @@
 import * as React from 'react';
 
-export const PageA: React.StatelessComponent = props => {
-  console.log(props);
-  return <h1>My Page A</h1>;
+interface Props {
+  title: string;
+  onChange: (value: string) => void;
+}
+
+export const PageA: React.StatelessComponent<Props> = props => (
+  <>
+    <h1>Page a title: {props.title}</h1>
+    <input value={props.title} onChange={handleChange(props)} />
+  </>
+);
+
+const handleChange = (props: Props) => e => {
+  props.onChange(e.target.value);
 };
