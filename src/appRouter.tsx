@@ -1,13 +1,17 @@
 import * as React from 'react';
-import { Router } from 'react-router-dom';
+import { ConnectedRouter } from 'connected-react-router';
+import { Provider } from 'react-redux';
 import { Routes } from './routes';
+import { store } from './store';
 
 interface Props {
   history;
 }
 
 export const AppRouter: React.StatelessComponent<Props> = props => (
-  <Router history={props.history}>
-    <Routes />
-  </Router>
+  <Provider store={store}>
+    <ConnectedRouter history={props.history}>
+      <Routes />
+    </ConnectedRouter>
+  </Provider>
 );

@@ -2,6 +2,7 @@ import * as React from 'react';
 import { Route, Switch, Link } from 'react-router-dom';
 import { routes } from './common/constants/routes';
 import { App } from './app';
+import { LoginContainer } from './pages/login';
 
 const Test = () => (
   <div>
@@ -14,6 +15,7 @@ const Test = () => (
         Page B
       </Link>
     </div>
+    <LoginContainer />
   </div>
 );
 
